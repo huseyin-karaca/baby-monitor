@@ -1,0 +1,42 @@
+{#-
+  The home page: the hero (title, team, summary, links and the project video), then the content of index.md in a
+  single reading column.
+-#}
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+  <section class="pg-hero">
+    <div class="md-grid pg-hero__grid">
+      <div class="pg-hero__text">
+        <p class="pg-hero__status">METU EEE capstone design · 2023–24 · team StarSense Ventures</p>
+        <h1>Baby Monitor with Star Quality</h1>
+        <p class="pg-hero__subtitle">A smart baby monitor that tracks temperature, movement, sleep and voice</p>
+        <p class="pg-hero__authors">Hasan Efe Akın · Ahmet Çobanoğlu · Tanel Gülerman · Hüseyin Karaca · Beyza Öge</p>
+        <p class="pg-hero__affil">Middle East Technical University · advised by Ahmet Cemal Durgun</p>
+        <p class="pg-hero__tldr">
+          A soft wearable, a controller next to the cot and a mobile app. The controller recognises a baby's cry and
+          a toddler calling <em>mama</em> or <em>papa</em> on the device, in real time, with models of under 20 kB.
+        </p>
+        <div class="pg-hero__actions">
+          <a class="pg-btn pg-btn--primary" href="https://youtu.be/aAMOuFkq0nw">Video</a>
+          <a class="pg-btn" href="{{ 'assets/poster.pdf' | url }}">Poster</a>
+          <a class="pg-btn" href="https://hkaraca.com/mapada/">Dataset</a>
+        </div>
+      </div>
+      <figure class="pg-hero__figure">
+        <div class="pg-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/aAMOuFkq0nw" title="METU EEE Capstone Design – StarSense Ventures – Smart Baby Monitor" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </figure>
+    </div>
+  </section>
+{% endblock %}
+
+{% block container %}
+  <div class="md-content pg-home" data-md-component="content">
+    <article class="md-content__inner md-typeset">
+      {{ page.content }}
+    </article>
+  </div>
+{% endblock %}
